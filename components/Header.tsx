@@ -1,23 +1,14 @@
-import { ConnectButton } from "@rainbow-me/rainbowkit";
-import { Wrapper } from "./Wrapper";
+"use client"
+import { PrivyConnectButton } from "@/components/PrivyConnectButton"
 
-const Header = () => {
+export function Header() {
   return (
-    <header className="py-8 border-b mb-10">
-      <Wrapper>
-        <div className="flex items-center justify-between">
-          <h1 className="text-lg md:text-xl font-bold">
-            Solidity Next.js Starter
-          </h1>
-          <ConnectButton
-            showBalance={false}
-            accountStatus="address"
-            label="Connect"
-          />
+    <header className="bg-white border-b border-gray-100 sticky top-0 z-50">
+      <div className="max-w-7xl mx-auto px-4 py-4">
+        <div className="flex items-center justify-end">
+          <PrivyConnectButton />
         </div>
-      </Wrapper>
+      </div>
     </header>
-  );
-};
-
-export { Header };
+  )
+}
