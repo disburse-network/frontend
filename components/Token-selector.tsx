@@ -7,7 +7,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from 
 import { ChevronDown, Search, TrendingUp, TrendingDown } from "lucide-react"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { Badge } from "@/components/ui/badge"
-import Image from "next/image"
+import { CryptoImage } from "@/components/ui/crypto-image"
 import type { Token } from "@/lib/tokens"
 import { getChainById } from "@/lib/tokens"
 import { cn } from "@/lib/utils"
@@ -61,13 +61,12 @@ export function TokenSelector({
         >
           {token ? (
             <>
-              <Image
-                src={token.logoURI || "/placeholder.svg"}
+              <CryptoImage
+                src={token.logoURI}
                 alt={token.symbol}
                 width={24}
                 height={24}
-                className="rounded-full shadow-sm"
-                crossOrigin="anonymous"
+                className="shadow-sm"
               />
               <span className="font-semibold">{token.symbol}</span>
               <ChevronDown className="w-4 h-4" />
@@ -87,13 +86,11 @@ export function TokenSelector({
             <span className="text-xl font-bold">Select Token</span>
             {chain && (
               <div className="flex items-center space-x-2 px-3 py-1 bg-gradient-to-r from-gray-100 to-gray-50 rounded-full border">
-                <Image
-                  src={chain.logoURI || "/placeholder.svg"}
+                <CryptoImage
+                  src={chain.logoURI}
                   alt={chain.name}
                   width={16}
                   height={16}
-                  className="rounded-full"
-                  crossOrigin="anonymous"
                 />
                 <span className="text-sm font-semibold text-gray-700">{chain.name}</span>
               </div>
@@ -124,13 +121,11 @@ export function TokenSelector({
                   onClick={() => handleSelect(popularToken)}
                   className="flex items-center space-x-2 h-9 px-3 rounded-xl hover:bg-gray-50 transition-colors"
                 >
-                  <Image
-                    src={popularToken.logoURI || "/placeholder.svg"}
+                  <CryptoImage
+                    src={popularToken.logoURI}
                     alt={popularToken.symbol}
                     width={16}
                     height={16}
-                    className="rounded-full"
-                    crossOrigin="anonymous"
                   />
                   <span className="font-medium">{popularToken.symbol}</span>
                 </Button>
@@ -148,13 +143,12 @@ export function TokenSelector({
                   className="w-full justify-between p-4 h-auto hover:bg-gray-50 rounded-xl transition-all duration-200 group"
                 >
                   <div className="flex items-center space-x-3">
-                    <Image
-                      src={tokenItem.logoURI || "/placeholder.svg"}
+                    <CryptoImage
+                      src={tokenItem.logoURI}
                       alt={tokenItem.symbol}
                       width={36}
                       height={36}
-                      className="rounded-full shadow-sm group-hover:shadow-md transition-shadow"
-                      crossOrigin="anonymous"
+                      className="shadow-sm group-hover:shadow-md transition-shadow"
                     />
                     <div className="text-left">
                       <div className="font-bold text-gray-900 flex items-center gap-2">
