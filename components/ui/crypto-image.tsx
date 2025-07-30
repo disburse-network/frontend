@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { cn } from "@/lib/utils"
 
 interface CryptoImageProps {
@@ -23,6 +23,12 @@ export function CryptoImage({
 }: CryptoImageProps) {
   const [imgSrc, setImgSrc] = useState(src)
   const [hasError, setHasError] = useState(false)
+
+  // Update imgSrc when src prop changes
+  useEffect(() => {
+    setImgSrc(src)
+    setHasError(false)
+  }, [src])
 
   const handleError = () => {
     if (!hasError) {

@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import { ChevronDown, CheckCircle } from "lucide-react"
-import Image from "next/image"
+import { CryptoImage } from "@/components/ui/crypto-image"
 import { chains, getChainById, Chain } from "@/lib/tokens"
 import { cn } from "@/lib/utils"
 
@@ -42,13 +42,12 @@ export function ChainSelector({ selectedChain, onChainChange, label, variant = "
             {currentChain && (
               <>
                 <div className="relative">
-                  <Image
-                    src={currentChain.logoURI || "/placeholder.svg"}
+                  <CryptoImage
+                    src={currentChain.logoURI}
                     alt={currentChain.name}
                     width={40}
                     height={40}
-                    className="rounded-full shadow-md"
-                    crossOrigin="anonymous"
+                    className="shadow-md"
                   />
                   <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-white rounded-full flex items-center justify-center shadow-sm">
                     <ChevronDown className="w-3 h-3 text-gray-600" />
@@ -78,13 +77,12 @@ export function ChainSelector({ selectedChain, onChainChange, label, variant = "
             >
               <div className="flex items-center space-x-3">
                 <div className="relative">
-                  <Image
-                    src={chain.logoURI || "/placeholder.svg"}
+                  <CryptoImage
+                    src={chain.logoURI}
                     alt={chain.name}
                     width={32}
                     height={32}
-                    className="rounded-full shadow-sm group-hover:shadow-md transition-shadow"
-                    crossOrigin="anonymous"
+                    className="shadow-sm group-hover:shadow-md transition-shadow"
                   />
                   {chain.id === selectedChain && (
                     <div className="absolute -top-1 -right-1 w-4 h-4 bg-emerald-500 rounded-full flex items-center justify-center">
