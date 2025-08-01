@@ -46,4 +46,4 @@ NEXT_PUBLIC_PRIVY_APP_ID=your_privy_app_id_here
 3. Test the authentication flow
 4. Customize the appearance if needed
 
-The migration is complete! Your app now uses Privy for wallet authentication. 
+The migration is complete! Your app now uses Privy for wallet authentication.

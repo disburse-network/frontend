@@ -73,11 +73,29 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        success: {
+          DEFAULT: "hsl(var(--success))",
+          foreground: "hsl(var(--success-foreground))",
+        },
+        warning: {
+          DEFAULT: "hsl(var(--warning))",
+          foreground: "hsl(var(--warning-foreground))",
+        },
+        // Cyber theme specific colors
+        cyber: {
+          orange: "hsl(25 100% 50%)",
+          "orange-light": "hsl(25 100% 60%)",
+          "orange-dark": "hsl(25 100% 40%)",
+          dark: "hsl(0 0% 8%)",
+          "dark-light": "hsl(0 0% 12%)",
+          "dark-lighter": "hsl(0 0% 15%)",
+        },
       },
       borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+        lg: "0",
+        md: "0",
+        sm: "0",
+        none: "0",
       },
       keyframes: {
         "accordion-down": {
@@ -88,10 +106,20 @@ const config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        "cyber-glow": {
+          "0%, 100%": { boxShadow: "0 0 20px hsl(25 100% 50% / 0.3)" },
+          "50%": { boxShadow: "0 0 30px hsl(25 100% 50% / 0.6)" },
+        },
+        "cyber-pulse": {
+          "0%, 100%": { opacity: "1" },
+          "50%": { opacity: "0.8" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "cyber-glow": "cyber-glow 2s ease-in-out infinite",
+        "cyber-pulse": "cyber-pulse 2s ease-in-out infinite",
       },
     },
   },
